@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: Outline
-    Event: 300
+    Event: 250
     filterSettings:
       RenderQueueType: 0
       LayerMask:
@@ -23,7 +23,7 @@ MonoBehaviour:
         m_Bits: 4294967295
       PassNames: []
     overrideMaterial: {fileID: 2100000, guid: d5e0db718d6b8a149b0d8110e3f9d7e8, type: 2}
-    overrideMaterialPassIndex: 0
+    overrideMaterialPassIndex: 1
     overrideDepthState: 0
     depthCompareFunction: 4
     enableWrite: 1

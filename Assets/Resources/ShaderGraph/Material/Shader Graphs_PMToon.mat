@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_PMToon
+  m_Shader: {fileID: -6465566751694194690, guid: ea42eeda02decf14d84c6368465c2548,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - GradientTex:
+        m_Texture: {fileID: 2800000, guid: e266f7c3df0ee524d866b26f51e3180e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - MainTex:
+        m_Texture: {fileID: 2800000, guid: 69e6e48040a05444693860cbb3935456, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_E0D0BD7A:
+        m_Texture: {fileID: 2800000, guid: 69e6e48040a05444693860cbb3935456, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_E2EF73BF:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - GradientX: 0
+    - GradientY: 0.5
+    m_Colors:
+    - Color_1A2AA120: {r: 1, g: 1, b: 1, a: 0}
+    - MainColor: {r: 1, g: 1, b: 1, a: 0}
+    - Tiling_Offset: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_1D4F0090: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_8BBE260E: {r: 1, g: 1, b: 0, a: 0}
+    - Vector4_BF40A620: {r: 1, g: 1, b: 0, a: 0}
