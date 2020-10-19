@@ -21,37 +21,6 @@ Shader "PMShader/OutLine"
 
 		Pass
 		{
-			Cull Front
-			CGPROGRAM
-			#pragma vertex vert
-			#pragma fragment frag
-			#include "UnityCG.cginc"
-			fixed4 _OutlineCol;
-			float _OutlineFactor;
-			struct v2f
-			{
-				float4 pos:SV_POSITION;	
-			};
-			v2f vert (appdata_full v)
-			{
-				v2f o;
-				o.pos=UnityObjectToClipPos(v.vertex);
-				float3 dir=normalize(v.vertex.xyz);
-				dir   = mul ((float3x3)UNITY_MATRIX_IT_MV, dir);
-				float2 offset = TransformViewToProjection(dir.xy);
-				offset=normalize(offset);
-				o.pos.xy += offset * o.pos.z *_OutlineFactor;
-				return o;
-			}
-			fixed4 frag(v2f i):SV_Target
-			{
-				return _OutlineCol;
-			}
-			ENDCG
-		}
-
-		Pass
-		{
 			//描边只用渲染背面，挤出轮廓线，所以剔除正面
 			Cull Front
 			////开启深度写入，防止物体交叠处的描边被后渲染的物体盖住
@@ -95,5 +64,39 @@ Shader "PMShader/OutLine"
 			}
 			ENDCG
 		}
+
+
+		Pass
+		{
+			Cull Front
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			#include "UnityCG.cginc"
+			fixed4 _OutlineCol;
+			float _OutlineFactor;
+			struct v2f
+			{
+				float4 pos:SV_POSITION;	
+			};
+			v2f vert (appdata_full v)
+			{
+				v2f o;
+				o.pos=UnityObjectToClipPos(v.vertex);
+				float3 dir=normalize(v.vertex.xyz);
+				dir   = mul ((float3x3)UNITY_MATRIX_IT_MV, dir);
+				float2 offset = TransformViewToProjection(dir.xy);
+				offset=normalize(offset);
+				o.pos.xy += offset * o.pos.z *_OutlineFactor;
+				return o;
+			}
+			fixed4 frag(v2f i):SV_Target
+			{
+				return _OutlineCol;
+			}
+			ENDCG
+		}
+
+		
 	}
 }
