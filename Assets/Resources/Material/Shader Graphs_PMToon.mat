@@ -43,9 +43,13 @@ Material:
     m_Floats:
     - GradientX: 0
     - GradientY: 0.5
+    - ShadowX: 0.5
     - SpecularScale: 0.95
+    - Vector1_1B8A49D4: 0
     m_Colors:
     - Color_1A2AA120: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8BF758E8: {r: 1, g: 1, b: 1, a: 0}
+    - Color_D50F622C: {r: 1, g: 1, b: 1, a: 0}
     - MainColor: {r: 1, g: 1, b: 1, a: 0}
     - SpecularColor: {r: 1, g: 1, b: 1, a: 0}
     - Tiling_Offset: {r: 1, g: 1, b: 0, a: 0}

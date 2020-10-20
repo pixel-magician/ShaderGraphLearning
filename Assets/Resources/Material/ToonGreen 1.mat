@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ToonGreen
+  m_Name: ToonGreen 1
   m_Shader: {fileID: -6465566751694194690, guid: ea42eeda02decf14d84c6368465c2548,
     type: 3}
   m_ShaderKeywords: 
@@ -43,10 +43,14 @@ Material:
     m_Floats:
     - GradientX: 0
     - GradientY: 0.5
+    - ShadowX: 0.5
     - SpecularScale: 0.95
+    - Vector1_1B8A49D4: 0
     m_Colors:
     - Color_1A2AA120: {r: 1, g: 1, b: 1, a: 0}
-    - MainColor: {r: 0, g: 1, b: 0.17201257, a: 0}
+    - Color_8BF758E8: {r: 1, g: 1, b: 1, a: 0}
+    - Color_D50F622C: {r: 1, g: 1, b: 1, a: 0}
+    - MainColor: {r: 0.7075472, g: 0.3488845, b: 0, a: 0}
     - SpecularColor: {r: 1, g: 1, b: 1, a: 0}
     - Tiling_Offset: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_1D4F0090: {r: 0, g: 0, b: 0, a: 0}
