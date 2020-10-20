@@ -41,6 +41,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - DissolveAmount: 100
+    - DissolveIntensity: 0.05
+    - DissolveProgress: 0
     - GradientX: 0
     - GradientY: 0.5
     - ShadowX: 0.5
@@ -50,6 +53,7 @@ Material:
     - Color_1A2AA120: {r: 1, g: 1, b: 1, a: 0}
     - Color_8BF758E8: {r: 1, g: 1, b: 1, a: 0}
     - Color_D50F622C: {r: 1, g: 1, b: 1, a: 0}
+    - DissolveColor: {r: 1024, g: 1024, b: 1024, a: 0}
     - MainColor: {r: 1, g: 1, b: 1, a: 0}
     - SpecularColor: {r: 1, g: 1, b: 1, a: 0}
     - Tiling_Offset: {r: 1, g: 1, b: 0, a: 0}
