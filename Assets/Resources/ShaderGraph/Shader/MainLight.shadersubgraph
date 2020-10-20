@@ -61,7 +61,7 @@
             "m_Guid": ""
         }
     },
-    "m_Path": "Sub Graphs",
+    "m_Path": "PMSubGraphs",
     "m_ConcretePrecision": 0,
     "m_ActiveOutputNodeGuidSerialized": ""
 }
