@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_Checkerboard
+  m_Shader: {fileID: -6465566751694194690, guid: 74450be668930c640ac5b15c2b85e341,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Col: 4
+    - LineWidth: 0.05
+    - Row: 4
+    m_Colors:
+    - ColorB: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 0}
+    - ColorF: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 0}
