@@ -25,7 +25,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 421a2da839a2912498b663f21c2a186f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_5F29A574:
@@ -56,7 +56,7 @@ Material:
     - Color_8BF758E8: {r: 1, g: 1, b: 1, a: 0}
     - Color_D50F622C: {r: 1, g: 1, b: 1, a: 0}
     - DissolveColor: {r: 0, g: 1351.1758, b: 1108.9801, a: 0}
-    - MainColor: {r: 1, g: 0.15690309, b: 0, a: 0}
+    - MainColor: {r: 1, g: 1, b: 1, a: 0}
     - SpecularColor: {r: 1, g: 1, b: 1, a: 0}
     - Tiling_Offset: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_1D4F0090: {r: 0, g: 0, b: 0, a: 0}

@@ -29,7 +29,7 @@ Material:
     - RippleSlimness: 10
     - RippleSpeed: 3
     - ShadowX: 0.5
-    - WaterAlpha: 1
+    - WaterAlpha: 0.7
     - WaveDensity: 5
     - WaveSpeed: 0.1
     m_Colors:

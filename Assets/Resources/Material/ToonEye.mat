@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ToonGreen
-  m_Shader: {fileID: -6465566751694194690, guid: 9bab9aa9d19504348a7500873c6be2ac,
+  m_Name: ToonEye
+  m_Shader: {fileID: -6465566751694194690, guid: 135e5f6001f28c24797fb6a98dcbff9c,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -26,6 +26,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - MainTex:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - TextEye:
+        m_Texture: {fileID: 2800000, guid: 0dac58069d6b07d4094b6784644096df, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_5F29A574:
@@ -47,16 +51,18 @@ Material:
     - GradientX: 0
     - GradientY: 0.5
     - ShadowX: 0.5
-    - SpecularScale: 0.95
-    - Vector1_1B8A49D4: 0
+    - SpecularScale: 0.99
+    - Vector1_1B8A49D4: 0.373
+    - Vector1_61D9ED78: 1.02
+    - Vector1_C413BD0B: 0.501
     m_Colors:
     - Color_1A2AA120: {r: 1, g: 1, b: 1, a: 0}
     - Color_8BF758E8: {r: 1, g: 1, b: 1, a: 0}
     - Color_D50F622C: {r: 1, g: 1, b: 1, a: 0}
     - DissolveColor: {r: 0, g: 1351.1758, b: 1108.9801, a: 0}
-    - MainColor: {r: 0, g: 1, b: 0.17201257, a: 0}
+    - MainColor: {r: 1, g: 0.6273585, b: 0.7898973, a: 0}
     - SpecularColor: {r: 1, g: 1, b: 1, a: 0}
-    - Tiling_Offset: {r: 1, g: 0.75, b: -0.13, a: 0.26}
+    - Tiling_Offset: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_1D4F0090: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_8BBE260E: {r: 1, g: 1, b: 0, a: 0}
     - Vector4_BF40A620: {r: 1, g: 1, b: 0, a: 0}
