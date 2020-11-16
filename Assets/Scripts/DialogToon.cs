@@ -18,9 +18,9 @@ public class DialogToon : MonoBehaviour
     [SerializeField]
     Vector2[] _cornerMarkPoint = new Vector2[]
     {
-        new Vector2(26, -56),
-        new Vector2(26, -56),
-        new Vector2(26, -56),
+        new Vector2(-26, 56),
+        new Vector2(26, 56),
+        new Vector2(-26, -56),
         new Vector2(26, -56),
     };
 
@@ -112,16 +112,20 @@ public class DialogToon : MonoBehaviour
             default:
                 break;
         }
-        var uiPos = pos
-            - new Vector2(Screen.width / 2, Screen.height / 2)
-            - posAdd / 2
-            - cornerMark.anchoredPosition
-            - _cornerMarkPoint[pointIndex]; ;
-        GetComponent<RectTransform>().anchoredPosition = uiPos;
+        var uiPosAdd = new Vector2(Screen.width / 2, Screen.height / 2)
+            + posAdd / 2
+            + cornerMark.anchoredPosition
+            + _cornerMarkPoint[pointIndex]; ;
+        GetComponent<RectTransform>().anchoredPosition = pos - uiPosAdd;
+
+
+
     }
 
     private void Update()
     {
+        #region 测试代码
+
         if (Input.GetMouseButtonDown(0))
         {
             SetData(Input.mousePosition, "我是猪虎，一只可爱的小猪！");
@@ -130,6 +134,7 @@ public class DialogToon : MonoBehaviour
         {
             SetData(Input.mousePosition, "1");
         }
+        #endregion
     }
 
 
@@ -159,13 +164,23 @@ public class DialogToon : MonoBehaviour
         }
     }
     /// <summary>
+    /// 将十六进制数转换为枚举类型
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
+    DialogCornerMarkDir GetDialogCornerMarkDir(int value)
+    {
+        return (DialogCornerMarkDir)value;
+    }
+
+    /// <summary>
     /// 对话框角标方向
     /// </summary>
     public enum DialogCornerMarkDir
     {
-        LU,
-        RU,
-        LD,
-        RD,
+        LU = 0x7,//0111
+        RU = 0x5,//0101
+        LD = 0x3,//0011
+        RD = 0x1,//0001
     }
 }
