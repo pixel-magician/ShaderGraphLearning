@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,10 +13,12 @@ public class DialogToon : MonoBehaviour
     RectTransform LU, RU, LD, RD;
     [SerializeField]
     private DialogCornerMarkDir _default = DialogCornerMarkDir.RD;
+    private DialogCornerMarkDir _cornerMarkDir = DialogCornerMarkDir.RD;
     /// <summary>
     /// 角标尖到角标中心点的向量
+    /// 手动测量出来的数值
     /// </summary>
-    [SerializeField]
+    //[SerializeField]
     Vector2[] _cornerMarkPoint = new Vector2[]
     {
         new Vector2(-26, 56),
@@ -26,25 +29,28 @@ public class DialogToon : MonoBehaviour
 
 
     public UnityEvent OnClick;
-
-    public DialogCornerMarkDir Default
+    /// <summary>
+    /// 记录当前角标的方向值
+    /// </summary>
+    public DialogCornerMarkDir CornerMarkDir
     {
-        get => _default;
+        get => _cornerMarkDir;
         set
         {
             GetCornerMarkRect().gameObject.SetActive(false);
-            _default = value;
+            _cornerMarkDir = value;
             GetCornerMarkRect().gameObject.SetActive(true);
         }
     }
 
     private void Awake()
     {
+        _cornerMarkDir = _default;
         LU.gameObject.SetActive(false);
         RU.gameObject.SetActive(false);
         LD.gameObject.SetActive(false);
         RD.gameObject.SetActive(false);
-        switch (_default)
+        switch (CornerMarkDir)
         {
             case DialogCornerMarkDir.LU:
                 LU.gameObject.SetActive(true);
@@ -70,6 +76,21 @@ public class DialogToon : MonoBehaviour
         //调整数值和锚点
         _text.text = message;
         _text.GetComponent<ContentSizeFitter>().SetLayoutHorizontal();//双层自动布局组件，需要强制刷新一次
+        Vector2 sizeDelta = _text.GetComponent<RectTransform>().sizeDelta;
+
+
+        //自适角标位置
+        int defaultBinValue = (int)_default;
+        if (pos.y > Screen.height - sizeDelta.y - 100) defaultBinValue |= 0B0100;//0100，使第二位为1
+        else if (pos.y < sizeDelta.y + 100) defaultBinValue &= 0B1011;//1011，使第二位为0
+        if (pos.x > Screen.width - sizeDelta.x - 100) defaultBinValue &= 0B1101;//0010，使第三位为1
+        else if (pos.x < sizeDelta.x + 100) defaultBinValue |= 0B0010;//1101，使第三位为0
+
+        CornerMarkDir = (DialogCornerMarkDir)(defaultBinValue);
+
+
+
+
         RectTransform cornerMark = GetCornerMarkRect();
         if (_text.GetComponent<RectTransform>().sizeDelta.x < cornerMark.sizeDelta.x / 2)
         {
@@ -90,8 +111,7 @@ public class DialogToon : MonoBehaviour
         //调整坐标
         int pointIndex = -1;
         Vector2 posAdd = Vector2.zero;
-        Vector2 sizeDelta = _text.GetComponent<RectTransform>().sizeDelta;
-        switch (_default)
+        switch (CornerMarkDir)
         {
             case DialogCornerMarkDir.LU:
                 posAdd = new Vector2(-sizeDelta.x, sizeDelta.y);
@@ -149,7 +169,7 @@ public class DialogToon : MonoBehaviour
     /// <returns></returns>
     RectTransform GetCornerMarkRect()
     {
-        switch (_default)
+        switch (CornerMarkDir)
         {
             case DialogCornerMarkDir.LU:
                 return LU;
@@ -163,15 +183,20 @@ public class DialogToon : MonoBehaviour
                 return null;
         }
     }
-    /// <summary>
-    /// 将十六进制数转换为枚举类型
-    /// </summary>
-    /// <param name="value"></param>
-    /// <returns></returns>
-    DialogCornerMarkDir GetDialogCornerMarkDir(int value)
-    {
-        return (DialogCornerMarkDir)value;
-    }
+    ///// <summary>
+    ///// 将十六进制数转换为枚举类型
+    ///// 值为0时，保持默认不变
+    ///// </summary>
+    ///// <param name="value"></param>
+    ///// <returns></returns>
+    //DialogCornerMarkDir GetDialogCornerMarkDir(int value)
+    //{
+
+
+    //    if (value == 0)
+    //        return _default;
+    //    return (DialogCornerMarkDir)value;
+    //}
 
     /// <summary>
     /// 对话框角标方向

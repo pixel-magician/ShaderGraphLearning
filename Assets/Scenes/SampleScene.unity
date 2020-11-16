@@ -218,12 +218,7 @@ MonoBehaviour:
   RU: {fileID: 1733139533}
   LD: {fileID: 187978785}
   RD: {fileID: 1639632594}
-  _default: 7
-  _cornerMarkPoint:
-  - {x: -26, y: 56}
-  - {x: 26, y: 56}
-  - {x: -26, y: -56}
-  - {x: 26, y: -56}
+  _default: 1
   OnClick:
     m_PersistentCalls:
       m_Calls: []
